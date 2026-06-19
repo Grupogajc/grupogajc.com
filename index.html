@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo GAJC | Recupere su tranquilidad financiera</title>
+<meta name="description" content="Grupo GAJC le acompaña a encontrar alternativas de pago, acuerdos flexibles y soluciones reales para normalizar su obligación financiera. Atención personalizada y canales de pago seguros.">
+<meta name="keywords" content="acuerdos de pago, soluciones financieras, recuperación de cartera, normalización de obligaciones, medios de pago seguros, atención al cliente, cobranza humanizada">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --negro: #111111;
+  --naranja: #E86200;
+  --naranja-vivo: #FF7A1A;
+  --naranja-claro: #FFA050;
+  --amarillo: #F5C842;
+  --verde: #3FA66B;
+  --crema: #FFF8EE;
+  --gris: #2A2A2A;
+  --blanco: #FFFFFF;
+  --texto-oscuro: #1A1A1A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} *{animation-duration:.001ms !important; transition-duration:.001ms !important;}}
+body{font-family:'DM Sans',sans-serif;background:var(--negro);color:var(--blanco);overflow-x:hidden;}
+a{color:inherit;}
+:focus-visible{outline:3px solid var(--amarillo); outline-offset:2px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(17,17,17,0.96);border-bottom:1px solid rgba(232,98,0,0.3);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;backdrop-filter:blur(10px);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo-svg{width:42px;height:42px;flex-shrink:0;}
+.nav-logo span{font-weight:600;font-size:14px;letter-spacing:1px;text-transform:uppercase;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.2s;}
+.nav-links a:hover{color:var(--naranja-vivo);}
+.nav-cta{background:var(--naranja);color:#fff;padding:8px 18px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:background 0.2s;display:inline-flex;align-items:center;gap:6px;}
+.nav-cta:hover{background:var(--naranja-vivo);}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:1px solid rgba(232,98,0,0.4);border-radius:6px;cursor:pointer;}
+.nav-toggle span{display:block;width:16px;height:2px;background:var(--naranja-claro);margin:0 auto;}
+.nav-mobile-panel{position:fixed;top:64px;left:0;right:0;background:var(--negro);border-bottom:1px solid rgba(232,98,0,0.3);padding:1rem 2rem 1.5rem;display:none;flex-direction:column;gap:1rem;z-index:998;}
+.nav-mobile-panel.is-open{display:flex;}
+.nav-mobile-panel a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .nav-toggle{display:flex;}
+}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--negro);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:8rem 2rem 4rem;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(232,98,0,0.04) 60px,rgba(232,98,0,0.04) 61px),repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(232,98,0,0.04) 60px,rgba(232,98,0,0.04) 61px);}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,98,0,0.12);border:1px solid rgba(232,98,0,0.4);border-radius:100px;padding:6px 18px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--naranja-claro);margin-bottom:2rem;position:relative;z-index:1;}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--naranja-vivo);display:inline-block;animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.hero h1{position:relative;z-index:1;font-family:'Playfair Display',serif;font-size:clamp(2.6rem,7vw,5.2rem);font-weight:900;line-height:1.08;max-width:920px;}
+.hero h1 .accent{color:var(--naranja-vivo);}
+.hero h1 .accent2{color:var(--amarillo);}
+.hero-sub{position:relative;z-index:1;font-size:1.1rem;color:rgba(255,255,255,.6);margin-top:1.5rem;max-width:600px;line-height:1.7;font-weight:300;}
+.hero-stats{position:relative;z-index:1;display:flex;gap:3rem;margin-top:3rem;flex-wrap:wrap;justify-content:center;}
+.hero-stat .num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;color:var(--naranja-vivo);line-height:1;}
+.hero-stat .lbl{font-size:11px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:2px;margin-top:4px;}
+.hero-ctas{position:relative;z-index:1;display:flex;gap:1rem;margin-top:3rem;flex-wrap:wrap;justify-content:center;}
+.btn-primary{background:var(--naranja);color:#fff;padding:14px 32px;border-radius:4px;font-weight:600;font-size:14px;letter-spacing:1px;text-decoration:none;text-transform:uppercase;transition:all .2s;border:2px solid var(--naranja);display:inline-block;cursor:pointer;}
+.btn-primary:hover{background:var(--naranja-vivo);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--amarillo);padding:14px 32px;border-radius:4px;font-weight:600;font-size:14px;letter-spacing:1px;text-decoration:none;text-transform:uppercase;transition:all .2s;border:2px solid var(--amarillo);display:inline-block;}
+.btn-outline:hover{background:rgba(245,200,66,.1);transform:translateY(-1px);}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.3);font-size:10px;letter-spacing:2px;text-transform:uppercase;animation:bounce 2s infinite;}
+.hero-scroll::after{content:'';width:1px;height:30px;background:rgba(232,98,0,.4);}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* SECTIONS */
+section{padding:6rem 2rem;}
+.container{max-width:1100px;margin:0 auto;}
+.container.narrow{max-width:740px;}
+.section-tag{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:900;line-height:1.18;margin-bottom:1rem;}
+.section-title span{color:var(--amarillo);}
+.section-desc{color:rgba(255,255,255,.55);font-size:1rem;line-height:1.8;max-width:600px;font-weight:300;}
+.divider{width:60px;height:3px;background:var(--naranja);margin:1.5rem 0;}
+.center-block{text-align:center;}
+.center-block .section-desc{margin:0 auto;}
+.center-block .divider{margin:1.5rem auto;}
+
+/* NO ESTÁ SOLO (cream) */
+.solo-section{background:var(--crema);color:var(--texto-oscuro);}
+.solo-section .section-tag{color:var(--naranja);}
+.solo-section .section-title{color:var(--texto-oscuro);}
+.solo-section .section-title span{color:var(--naranja);}
+.solo-section .section-desc{color:#555;}
+.solo-section p.extra{color:#555;font-size:1rem;line-height:1.8;max-width:640px;margin:0 auto 1rem;font-weight:400;}
+
+/* QUIENES SOMOS + VALORES (dark, dif-grid pattern) */
+.quienes-section{background:var(--negro);}
+.quienes-intro{max-width:680px;margin:0 auto 3rem;text-align:center;}
+.quienes-intro p{color:rgba(255,255,255,.6);font-size:1rem;line-height:1.8;margin-top:1rem;}
+.dif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(232,98,0,.2);border-radius:8px;overflow:hidden;}
+.dif-item{padding:2.5rem 2rem;border-right:1px solid rgba(232,98,0,.15);border-bottom:1px solid rgba(232,98,0,.15);transition:background .2s;}
+.dif-item:hover{background:rgba(232,98,0,.06);}
+.dif-item:nth-child(3n){border-right:none;}
+.dif-icon{font-size:2rem;margin-bottom:1rem;}
+.dif-item h3{font-size:1rem;font-weight:600;color:var(--amarillo);margin-bottom:.6rem;}
+.dif-item p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6;}
+@media(max-width:768px){.dif-grid{grid-template-columns:1fr;} .dif-item{border-right:none;}}
+
+/* ALIADOS (cream, beneficio-card reused) */
+.aliados-section{background:var(--crema);color:var(--texto-oscuro);}
+.aliados-section .section-tag{color:var(--naranja);}
+.aliados-section .section-title{color:var(--texto-oscuro);}
+.aliados-section .section-desc{color:#555;}
+.ally-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem;}
+.ally-card{background:#fff;border-radius:8px;padding:1.8rem;border-left:4px solid var(--naranja);box-shadow:0 4px 24px rgba(0,0,0,.07);transition:transform .2s,box-shadow .2s;}
+.ally-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(232,98,0,.15);}
+.ally-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--naranja);padding:3px 10px;border-radius:100px;margin-bottom:.9rem;}
+.ally-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--texto-oscuro);margin-bottom:.5rem;}
+.ally-card p{font-size:.88rem;color:#666;line-height:1.6;margin-bottom:.8rem;}
+.ally-card ul{list-style:none;}
+.ally-card li{display:flex;align-items:flex-start;gap:8px;font-size:.83rem;margin-bottom:.4rem;color:#555;}
+.ally-card li::before{content:'✓';color:var(--naranja);font-weight:700;flex-shrink:0;}
+.allies-note{text-align:center;font-size:.85rem;color:#777;max-width:560px;margin:2.5rem auto 0;}
+@media(max-width:768px){.ally-grid{grid-template-columns:1fr;}}
+
+/* BENEFICIOS (dark, vida-card pattern) */
+.beneficios-section{background:linear-gradient(160deg,#1A0900 0%,#111 50%,#0D0D0D 100%);position:relative;overflow:hidden;}
+.beneficios-section::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,98,0,.07) 0%,transparent 70%);}
+.vida-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem;position:relative;z-index:1;}
+.vida-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:2rem;text-align:center;transition:all .3s;position:relative;overflow:hidden;}
+.vida-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--naranja),var(--amarillo));}
+.vida-card:hover{background:rgba(232,98,0,.07);border-color:rgba(232,98,0,.3);transform:translateY(-4px);}
+.vida-step{width:48px;height:48px;border-radius:50%;background:rgba(232,98,0,.15);border:2px solid var(--naranja);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--naranja);margin:0 auto 1rem;}
+.vida-card h3{font-size:1rem;font-weight:600;color:var(--amarillo);margin-bottom:.6rem;}
+.vida-card p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6;}
+
+/* COMO FUNCIONA (dark, cont-grid pattern) */
+.como-section{background:#0D0D0D;}
+.cont-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem;}
+.cont-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:2rem;transition:all .2s;}
+.cont-card:hover{background:rgba(232,98,0,.06);border-color:rgba(232,98,0,.3);}
+.cont-letter{width:36px;height:36px;border-radius:50%;background:transparent;border:2px solid var(--naranja);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--naranja);margin-bottom:1rem;font-family:'Playfair Display',serif;}
+.cont-letter.is-final{border-color:var(--verde);color:var(--verde);}
+.cont-card h4{font-size:.95rem;font-weight:600;color:var(--amarillo);margin-bottom:.5rem;}
+.cont-card p{font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.6;}
+
+/* TESTIMONIOS (dark, story-card pattern) */
+.story-section{background:#111;}
+.stories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;}
+.story-card{background:var(--gris);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.05);transition:border-color .2s,transform .2s;}
+.story-card:hover{border-color:rgba(232,98,0,.4);transform:translateY(-3px);}
+.story-header{background:linear-gradient(135deg,var(--naranja) 0%,#B84E00 100%);padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;}
+.story-avatar{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:#fff;flex-shrink:0;}
+.story-header span{font-size:.8rem;color:rgba(255,255,255,.85);}
+.story-body{padding:1.5rem;}
+.story-body .quote{font-size:.95rem;line-height:1.7;color:rgba(255,255,255,.8);font-style:italic;border-left:3px solid var(--naranja);padding-left:1rem;}
+.story-disclaimer{text-align:center;font-size:.78rem;color:rgba(255,255,255,.3);margin-top:2.5rem;}
+
+/* MEDIOS DE PAGO (cream, plan-card pattern) */
+.pagos-section{background:var(--crema);color:var(--texto-oscuro);}
+.pagos-section .section-tag{color:var(--naranja);}
+.pagos-section .section-title{color:var(--texto-oscuro);}
+.pagos-section .section-desc{color:#555;}
+.pago-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem;}
+.pago-card{background:#fff;border-radius:8px;padding:2.2rem;border:2px solid transparent;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:all .2s;text-align:center;}
+.pago-card:hover{transform:translateY(-4px);border-color:var(--naranja);box-shadow:0 12px 36px rgba(232,98,0,.12);}
+.pago-badge{display:inline-block;background:var(--naranja);color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:100px;margin-bottom:1.2rem;}
+.pago-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--texto-oscuro);margin-bottom:.7rem;}
+.pago-card p{font-size:.88rem;color:#666;line-height:1.6;margin-bottom:1.4rem;}
+.pago-note{text-align:center;font-size:.85rem;color:#777;max-width:560px;margin:2.5rem auto 0;}
+
+/* CONTACTO (dark, split form) */
+.contacto-section{background:linear-gradient(160deg,#1A0900 0%,#0D0D0D 50%,#0A1500 100%);position:relative;overflow:hidden;}
+.contacto-split{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start;}
+.contacto-list{list-style:none;margin-top:2rem;}
+.contacto-list li{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.92rem;color:rgba(255,255,255,.7);}
+.contacto-list li:last-child{border-bottom:none;}
+.contacto-list strong{color:var(--amarillo);display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.3rem;}
+.contacto-form{background:rgba(255,255,255,.02);border:1px solid rgba(232,98,0,.2);border-radius:12px;padding:2.2rem;}
+.form-row{margin-bottom:1.2rem;}
+.form-row label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem;}
+.form-row input, .form-row textarea{width:100%;padding:.8em .9em;border:1px solid rgba(255,255,255,.15);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:.92rem;background:rgba(255,255,255,.03);color:#fff;}
+.form-row input::placeholder, .form-row textarea::placeholder{color:rgba(255,255,255,.3);}
+.form-row input:focus, .form-row textarea:focus{outline:none;border-color:var(--naranja);background:rgba(255,255,255,.06);}
+.form-row-split{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:500px){.form-row-split{grid-template-columns:1fr;}}
+.checkbox-row{display:flex;align-items:flex-start;gap:10px;font-size:.8rem;font-weight:400;text-transform:none;letter-spacing:0;color:rgba(255,255,255,.55);}
+.checkbox-row input{width:auto;margin-top:3px;}
+.checkbox-row a{color:var(--naranja-claro);text-decoration:underline;}
+.form-feedback{margin-top:1rem;font-size:.85rem;font-weight:600;min-height:1.2em;}
+.form-feedback.ok{color:var(--verde);}
+.form-feedback.err{color:#FF8A65;}
+@media(max-width:860px){.contacto-split{grid-template-columns:1fr;gap:2.5rem;}}
+
+/* FAQ (cream accordion) */
+.faq-section{background:var(--crema);color:var(--texto-oscuro);}
+.faq-section .section-tag{color:var(--naranja);}
+.faq-section .section-title{color:var(--texto-oscuro);}
+.faq-section .section-desc{color:#555;}
+.accordion{margin-top:2.5rem;border-top:1px solid rgba(0,0,0,.1);}
+.accordion-item{border-bottom:1px solid rgba(0,0,0,.1);}
+.accordion-trigger{width:100%;text-align:left;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.98rem;color:var(--texto-oscuro);padding:1.2rem .2rem;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.accordion-trigger::after{content:'+';font-size:1.4rem;font-weight:400;color:var(--naranja);flex-shrink:0;transition:transform .2s ease;}
+.accordion-trigger[aria-expanded="true"]::after{transform:rotate(45deg);}
+.accordion-panel{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+.accordion-panel p{padding:0 .2rem 1.2rem;margin:0;color:#666;font-size:.92rem;line-height:1.7;}
+.accordion-panel a{color:var(--naranja);font-weight:600;}
+
+/* CTA FINAL (orange) */
+.cta-section{background:var(--naranja);padding:6rem 2rem;text-align:center;}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;max-width:700px;margin:0 auto 1.2rem;line-height:1.15;}
+.cta-section p{font-size:1.05rem;color:rgba(255,255,255,.85);margin-bottom:2.2rem;}
+.btn-white{background:#fff;color:var(--naranja);padding:14px 36px;border-radius:4px;font-weight:700;font-size:14px;letter-spacing:1px;text-decoration:none;text-transform:uppercase;display:inline-block;transition:all .2s;}
+.btn-white:hover{background:var(--amarillo);color:var(--texto-oscuro);transform:translateY(-2px);}
+.cta-contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2.8rem;}
+.cta-contact-item .label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.6);margin-bottom:4px;}
+.cta-contact-item .value{font-size:1rem;font-weight:600;color:#fff;}
+
+/* FOOTER */
+footer{background:var(--negro);padding:3rem 2rem 2rem;text-align:center;border-top:1px solid rgba(232,98,0,.2);}
+.footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:.5rem;}
+.footer-tagline{font-size:.8rem;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;}
+.footer-legal{margin-top:1.6rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
+.footer-legal a{font-size:.78rem;color:rgba(255,255,255,.4);text-decoration:none;}
+.footer-legal a:hover{color:var(--naranja-claro);}
+.footer-map{max-width:420px;margin:1.8rem auto 0;border-radius:8px;overflow:hidden;border:1px solid rgba(232,98,0,.2);}
+.footer-copy{margin-top:1.8rem;font-size:.75rem;color:rgba(255,255,255,.25);}
+
+/* WHATSAPP FAB + CHATBOT */
+.fab-whatsapp{position:fixed;right:24px;bottom:96px;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.5);z-index:90;text-decoration:none;}
+.fab-whatsapp:hover{transform:scale(1.06);}
+.chatbot-launcher{position:fixed;right:24px;bottom:24px;z-index:91;display:flex;align-items:center;gap:10px;background:var(--negro);color:#fff;border:1px solid var(--naranja);padding:10px 18px 10px 8px;border-radius:999px;cursor:pointer;box-shadow:0 12px 28px -10px rgba(0,0,0,.6);}
+.chatbot-avatar{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--naranja);color:#fff;font-family:'Playfair Display',serif;font-weight:900;flex-shrink:0;}
+.chatbot-launcher-text{font-size:.8rem;font-weight:700;letter-spacing:.5px;}
+.chatbot-panel{position:fixed;right:24px;bottom:96px;width:340px;max-height:70vh;min-height:420px;background:var(--gris);border:1px solid rgba(232,98,0,.25);border-radius:14px;box-shadow:0 24px 48px -16px rgba(0,0,0,.6);display:flex;flex-direction:column;overflow:hidden;z-index:95;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.chatbot-panel.is-open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+.chatbot-header{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--negro);}
+.chatbot-header strong{display:block;font-size:.92rem;color:#fff;}
+.chatbot-header small{display:block;font-size:.7rem;color:rgba(255,255,255,.45);}
+.chatbot-close{margin-left:auto;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;}
+.chatbot-body{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:#1A1A1A;}
+.chat-msg{max-width:88%;padding:10px 14px;border-radius:14px;font-size:.85rem;line-height:1.45;}
+.chat-msg.bot{align-self:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.85);border-bottom-left-radius:4px;}
+.chat-msg.user{align-self:flex-end;background:var(--naranja);color:#fff;border-bottom-right-radius:4px;}
+.chat-options{display:flex;flex-direction:column;gap:8px;align-self:stretch;}
+.chat-option-btn{text-align:left;padding:9px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:600;color:rgba(255,255,255,.85);cursor:pointer;transition:border-color .15s,background .15s;}
+.chat-option-btn:hover{border-color:var(--naranja);background:rgba(232,98,0,.1);}
+.chat-link-btn{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:10px;background:#25D366;color:#fff;font-size:.83rem;font-weight:700;text-decoration:none;}
+@media(max-width:480px){
+  .chatbot-panel{right:12px;left:12px;width:auto;bottom:88px;}
+  .fab-whatsapp{right:16px;bottom:90px;}
+  .chatbot-launcher{right:16px;bottom:16px;}
+  .chatbot-launcher-text{display:none;}
+}
+
+/* UTILS */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.skip-link{position:absolute;left:-999px;top:0;background:#fff;color:#111;padding:.6em 1em;z-index:9999;}
+.skip-link:focus{left:8px;top:74px;}
+@media(prefers-reduced-motion: reduce){.fade-in{opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo" style="text-decoration:none;color:#fff;">
+    <svg class="nav-logo-svg" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="21" cy="21" r="20" fill="#111" stroke="#E86200" stroke-width="1.5"/>
+      <circle cx="21" cy="21" r="14" fill="none" stroke="#E86200" stroke-width="0.8" opacity="0.4"/>
+      <path d="M8 22 Q12 14 21 13 Q30 14 34 22 Q30 30 21 31 Q12 30 8 22Z" fill="#E86200" opacity="0.15"/>
+      <path d="M10 21 Q14 15 21 14 Q28 15 32 21" stroke="#E86200" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M11 23 Q15 28 21 29 Q27 28 31 23" stroke="#F5C842" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <text x="21" y="22" text-anchor="middle" fill="#fff" font-size="5" font-weight="700" font-family="Arial" letter-spacing="0.5">GAJC</text>
+    </svg>
+    <span>Grupo GAJC</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#no-esta-solo">No está solo</a></li>
+    <li><a href="#quienes-somos">Quiénes somos</a></li>
+    <li><a href="#aliados">Aliados</a></li>
+    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#pagos">Medios de pago</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/573112420534" class="nav-cta" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile-panel" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile-panel" id="nav-mobile-panel">
+  <a href="#no-esta-solo">No está solo</a>
+  <a href="#quienes-somos">Quiénes somos</a>
+  <a href="#aliados">Aliados</a>
+  <a href="#beneficios">Beneficios</a>
+  <a href="#como-funciona">Cómo funciona</a>
+  <a href="#pagos">Medios de pago</a>
+  <a href="#faq">Preguntas frecuentes</a>
+  <a href="#contacto">Contacto</a>
+  <a href="https://wa.me/573112420534" target="_blank" rel="noopener" style="color:var(--naranja-claro);">WhatsApp 311 242 0534 →</a>
+</div>
+
+<main id="contenido">
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-badge">Acompañamiento financiero humano</div>
+  <h1>Recupere su <span class="accent">tranquilidad</span><br>financiera. <span class="accent2">Con acompañamiento.</span></h1>
+  <p class="hero-sub">Entendemos que las circunstancias pueden cambiar. Por 7 años hemos ayudado a las personas a encontrar alternativas reales para ponerse al día, liderados por 18 años de experiencia en cobranza humanizada.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">7</div><div class="lbl">Años acompañando casos</div></div>
+    <div class="hero-stat"><div class="num">18</div><div class="lbl">Años de experiencia gerencial</div></div>
+    <div class="hero-stat"><div class="num">Nacional</div><div class="lbl">Cobertura en Colombia</div></div>
+    <div class="hero-stat"><div class="num">100%</div><div class="lbl">Atención personalizada</div></div>
+  </div>
+  <div class="hero-ctas">
+    <a href="#contacto" class="btn-primary">Consultar mi caso</a>
+    <a href="https://wa.me/573112420534" class="btn-outline" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- NO ESTÁ SOLO -->
+<section class="solo-section" id="no-esta-solo">
+  <div class="container narrow center-block fade-in">
+    <div class="section-tag">No está solo en esto</div>
+    <h2 class="section-title">Una situación económica difícil no <span>define su historia</span></h2>
+    <div class="divider"></div>
+    <p class="extra">Muchas personas atraviesan momentos en los que los ingresos cambian, surge un imprevisto o las cuentas se acumulan más rápido de lo esperado. No es un caso aislado, y no tiene por qué resolverlo solo.</p>
+    <p class="extra">Nuestro trabajo no es presionarlo: es ayudarle a encontrar la alternativa que se ajuste a su realidad actual, para que pueda avanzar con su obligación al día y su tranquilidad de vuelta.</p>
+  </div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section class="quienes-section" id="quienes-somos">
+  <div class="container">
+    <div class="quienes-intro fade-in">
+      <div class="section-tag">Quiénes somos</div>
+      <h2 class="section-title">Un aliado humano dentro de un proceso financiero</h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+      <p>Grupo GAJC S.A.S. es una empresa colombiana especializada en gestión de cartera, atención al cliente, localización e investigación de información. Actuamos como aliado externo de distintas entidades acreedoras, apoyando procesos de normalización de obligaciones siempre dentro del marco legal colombiano.</p>
+      <p>No somos quienes otorgaron su crédito original: somos el equipo que se sienta con usted a mirar las alternativas disponibles y a construir, en conjunto, una salida razonable.</p>
+    </div>
+
+    <div class="dif-grid fade-in">
+      <div class="dif-item">
+        <div class="dif-icon">🤝</div>
+        <h3>Respeto al consumidor financiero</h3>
+        <p>Comunicación clara, sin presión y sin lenguaje intimidante en ningún canal.</p>
+      </div>
+      <div class="dif-item">
+        <div class="dif-icon">🔍</div>
+        <h3>Transparencia</h3>
+        <p>Le explicamos quién solicita la gestión, cuál es su saldo y qué alternativas existen.</p>
+      </div>
+      <div class="dif-item">
+        <div class="dif-icon">🧭</div>
+        <h3>Acompañamiento permanente</h3>
+        <p>Un mismo equipo lo orienta desde la primera consulta hasta el paz y salvo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALIADOS -->
+<section class="aliados-section" id="aliados">
+  <div class="container">
+    <div class="center-block fade-in">
+      <div class="section-tag">Nuestros aliados</div>
+      <h2 class="section-title">Con quién trabajamos — y para qué</h2>
+      <p class="section-desc" style="margin:0 auto;">Creemos que usted tiene derecho a saber con claridad quién participa en su proceso. Estas son las organizaciones con las que colaboramos y el rol que cumple cada una.</p>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+    </div>
+
+    <div class="ally-grid">
+      <div class="ally-card fade-in">
+        <span class="ally-tag">Cobro de cartera</span>
+        <h3>Reestructura S.A.S.</h3>
+        <p>Especialistas en recuperación y administración de cartera. Gestiona alternativas de normalización y formaliza los acuerdos de pago.</p>
+        <ul>
+          <li>Cobro de cartera</li>
+          <li>Normalización de obligaciones</li>
+          <li>Acuerdos de pago</li>
+        </ul>
+      </div>
+      <div class="ally-card fade-in">
+        <span class="ally-tag">Cobro de cartera</span>
+        <h3>Crear País S.A.S.</h3>
+        <p>Entidad enfocada en soluciones de recuperación de cartera, con canales de pago propios y acompañamiento durante la negociación.</p>
+        <ul>
+          <li>Cobro de cartera</li>
+          <li>Alternativas de pago</li>
+          <li>Normalización de obligaciones</li>
+        </ul>
+      </div>
+      <div class="ally-card fade-in">
+        <span class="ally-tag">Investigación de bienes</span>
+        <h3>Gecaser</h3>
+        <p>Servicios de investigación y localización que apoyan la verificación de información dentro del proceso, conforme a la normativa vigente.</p>
+        <ul>
+          <li>Investigación de bienes</li>
+          <li>Ubicación de activos</li>
+        </ul>
+      </div>
+      <div class="ally-card fade-in">
+        <span class="ally-tag">Investigación de bienes</span>
+        <h3>Coopcafam</h3>
+        <p>Servicios de investigación patrimonial que contribuyen a mantener actualizada la información asociada a cada caso.</p>
+        <ul>
+          <li>Investigación de bienes</li>
+          <li>Verificación patrimonial</li>
+        </ul>
+      </div>
+    </div>
+    <p class="allies-note">Todas nuestras gestiones se realizan dentro del marco legal colombiano y respetando la normativa de protección de datos personales (Ley 1581 de 2012) y la Ley 2300 de 2023 sobre el derecho a la intimidad de los consumidores.</p>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="beneficios-section" id="beneficios">
+  <div class="container">
+    <div class="center-block fade-in">
+      <div class="section-tag">¿Cómo podemos ayudarle?</div>
+      <h2 class="section-title">Beneficios pensados en <span>su situación</span></h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+    </div>
+    <div class="vida-grid">
+      <div class="vida-card fade-in"><div class="vida-step">1</div><h3>Alternativas de pago</h3><p>Conozca opciones de acuerdo adaptadas a su capacidad real de pago.</p></div>
+      <div class="vida-card fade-in"><div class="vida-step">2</div><h3>Atención personalizada</h3><p>Un asesor revisa su caso particular antes de proponerle una alternativa.</p></div>
+      <div class="vida-card fade-in"><div class="vida-step">3</div><h3>Canales seguros</h3><p>Realice sus pagos únicamente a través de plataformas autorizadas.</p></div>
+      <div class="vida-card fade-in"><div class="vida-step">4</div><h3>Campañas especiales</h3><p>Consulte descuentos y beneficios vigentes según la entidad acreedora.</p></div>
+      <div class="vida-card fade-in"><div class="vida-step">5</div><h3>Recuperación de su historial</h3><p>Avance hacia la actualización de su información una vez normalizada la obligación.</p></div>
+      <div class="vida-card fade-in"><div class="vida-step">6</div><h3>Paz y salvo</h3><p>Reciba su certificación al cumplir los requisitos definidos por la entidad acreedora.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="como-section" id="como-funciona">
+  <div class="container">
+    <div class="center-block fade-in">
+      <div class="section-tag">La ruta hacia su tranquilidad</div>
+      <h2 class="section-title">Cinco pasos. <span>Sin atajos, sin sorpresas.</span></h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+    </div>
+    <div class="cont-grid">
+      <div class="cont-card fade-in"><div class="cont-letter">1</div><h4>Consulte su caso</h4><p>Escríbanos por WhatsApp o diligencie el formulario para revisar su obligación.</p></div>
+      <div class="cont-card fade-in"><div class="cont-letter">2</div><h4>Elija su alternativa</h4><p>Le presentamos las opciones de acuerdo disponibles para su situación.</p></div>
+      <div class="cont-card fade-in"><div class="cont-letter">3</div><h4>Formalice el acuerdo</h4><p>Definimos por escrito las condiciones, plazos y valores acordados.</p></div>
+      <div class="cont-card fade-in"><div class="cont-letter">4</div><h4>Realice el pago</h4><p>Use los canales autorizados para abonar o cancelar su obligación.</p></div>
+      <div class="cont-card fade-in"><div class="cont-letter is-final">5</div><h4>Reciba su paz y salvo</h4><p>Una vez cumplidos los requisitos, formalizamos el cierre de su caso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="story-section" id="testimonios">
+  <div class="container">
+    <div class="center-block fade-in">
+      <div class="section-tag">Historias de superación</div>
+      <h2 class="section-title">Lo que cuentan quienes ya <span>recorrieron este camino</span></h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+    </div>
+    <div class="stories-grid">
+      <div class="story-card fade-in">
+        <div class="story-header"><div class="story-avatar">C</div><span>Cliente Grupo GAJC</span></div>
+        <div class="story-body"><p class="quote">"Pensé que no tendría solución, pero encontré una alternativa que se ajustó a mis posibilidades."</p></div>
+      </div>
+      <div class="story-card fade-in">
+        <div class="story-header"><div class="story-avatar">C</div><span>Cliente Grupo GAJC</span></div>
+        <div class="story-body"><p class="quote">"El proceso fue claro desde el inicio y recibí acompañamiento en cada paso."</p></div>
+      </div>
+      <div class="story-card fade-in">
+        <div class="story-header"><div class="story-avatar">C</div><span>Cliente Grupo GAJC</span></div>
+        <div class="story-body"><p class="quote">"Logré normalizar mi situación y, sobre todo, recuperar mi tranquilidad."</p></div>
+      </div>
+    </div>
+    <p class="story-disclaimer">Testimonios ilustrativos de experiencias frecuentes reportadas por usuarios. Los nombres se mantienen en reserva por confidencialidad.</p>
+  </div>
+</section>
+
+<!-- MEDIOS DE PAGO -->
+<section class="pagos-section" id="pagos">
+  <div class="container">
+    <div class="center-block fade-in">
+      <div class="section-tag">Medios de pago</div>
+      <h2 class="section-title">Realice su pago de forma <span>rápida y segura</span></h2>
+      <p class="section-desc" style="margin:0 auto;">Utilice únicamente los canales autorizados que se muestran a continuación, según la entidad indicada en su gestión.</p>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+    </div>
+    <div class="pago-grid">
+      <div class="pago-card fade-in">
+        <span class="pago-badge">Canal autorizado</span>
+        <h3>Reestructura S.A.S.</h3>
+        <p>Realice su pago de forma segura a través de la plataforma autorizada Aval Pay Center.</p>
+        <a href="https://www.avalpaycenter.com/wps/portal/portal-de-pagos/web/pagos-aval/resultado-busqueda/realizar-pago?idConv=00002304&origen=buscar" class="btn-primary" target="_blank" rel="noopener">Pagar obligación</a>
+      </div>
+      <div class="pago-card fade-in">
+        <span class="pago-badge">Canal autorizado</span>
+        <h3>Crear País S.A.S.</h3>
+        <p>Acceda al portal seguro de pagos PSE de Scotiabank Colpatria para normalizar su obligación.</p>
+        <a href="https://www.psecomercio.scotiabankcolpatria.com/payment/7444" class="btn-primary" target="_blank" rel="noopener">Pagar obligación</a>
+      </div>
+    </div>
+    <p class="pago-note">¿No identifica a través de cuál entidad le corresponde pagar? Escríbanos por WhatsApp y un asesor le confirma el canal correcto antes de realizar cualquier pago.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto-section" id="contacto">
+  <div class="container contacto-split">
+    <div class="fade-in">
+      <div class="section-tag">Consulta rápida</div>
+      <h2 class="section-title">Cuéntenos su caso</h2>
+      <div class="divider"></div>
+      <p style="color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.7;">Complete el formulario y un asesor se comunicará con usted para revisar las alternativas disponibles. Sus datos se manejan de forma confidencial conforme a nuestra política de tratamiento de datos.</p>
+      <ul class="contacto-list">
+        <li><strong>WhatsApp</strong><a href="https://wa.me/573112420534" target="_blank" rel="noopener">311 242 0534</a> · <a href="https://wa.me/573193853045" target="_blank" rel="noopener">319 385 3045</a></li>
+        <li><strong>Correo</strong><a href="mailto:asistente.gerencia@grupogajc.co">asistente.gerencia@grupogajc.co</a></li>
+        <li><strong>Dirección</strong>Cra 4 No. 18-50, Oficina 1401</li>
+      </ul>
+    </div>
+
+    <form class="contacto-form fade-in" id="contact-form" action="php/enviar-formulario.php" method="POST" novalidate>
+      <div class="form-row">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required autocomplete="name">
+      </div>
+      <div class="form-row form-row-split">
+        <div><label for="cedula">Cédula</label><input type="text" id="cedula" name="cedula" required inputmode="numeric" autocomplete="off"></div>
+        <div><label for="celular">Celular</label><input type="tel" id="celular" name="celular" required autocomplete="tel"></div>
+      </div>
+      <div class="form-row">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required autocomplete="email">
+      </div>
+      <div class="form-row">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntenos brevemente su situación"></textarea>
+      </div>
+      <div class="form-row">
+        <label class="checkbox-row" style="text-transform:none;">
+          <input type="checkbox" id="autorizacion" name="autorizacion" required>
+          <span>Autorizo el tratamiento de mis datos personales conforme a la <a href="politica-tratamiento-datos.html" target="_blank" rel="noopener">política de tratamiento de datos</a>.</span>
+        </label>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;text-align:center;">Quiero recibir asesoría</button>
+      <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container narrow">
+    <div class="center-block fade-in">
+      <div class="section-tag">Preguntas frecuentes</div>
+      <h2 class="section-title">Respuestas claras a <span>sus dudas más comunes</span></h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+    </div>
+    <div class="accordion fade-in">
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">¿Cómo puedo consultar el saldo de mi obligación?</button>
+        <div class="accordion-panel"><p>Escríbanos por WhatsApp o use el formulario de contacto indicando su número de cédula; un asesor le confirmará el saldo y la entidad asociada a su caso.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">¿Puedo realizar un acuerdo de pago?</button>
+        <div class="accordion-panel"><p>Sí. La mayoría de los casos admite alternativas de pago ajustadas a su capacidad actual. Un asesor revisará su situación y le presentará las opciones disponibles.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">¿Cómo realizo mi pago?</button>
+        <div class="accordion-panel"><p>A través de los canales autorizados que aparecen en la sección <a href="#pagos">Medios de pago</a> de esta página, según la entidad que gestiona su obligación.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">¿Cuánto tarda la emisión de un paz y salvo?</button>
+        <div class="accordion-panel"><p>Una vez cumplidos los requisitos definidos por la entidad acreedora, el tiempo de emisión depende de cada caso particular; su asesor le indicará el plazo estimado.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">¿Cómo me comunico con un asesor?</button>
+        <div class="accordion-panel"><p>Puede escribirnos por WhatsApp al 311 242 0534 o al 319 385 3045, enviar un correo a asistente.gerencia@grupogajc.co, o usar el chat y el formulario de esta página.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">¿Qué entidades atiende Grupo GAJC?</button>
+        <div class="accordion-panel"><p>Actuamos como aliado externo de distintas entidades acreedoras. En la sección <a href="#aliados">Nuestros aliados</a> puede ver con cuáles organizaciones colaboramos y qué rol cumple cada una.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <h2>¿Listo para recuperar su tranquilidad?</h2>
+  <p>7 años de Grupo GAJC · 18 años de experiencia en cobranza humanizada · Acompañamiento real, sin presión.</p>
+  <a href="https://wa.me/573112420534" target="_blank" rel="noopener" class="btn-white">Hablar con un asesor ahora</a>
+  <div class="cta-contacts">
+    <div class="cta-contact-item"><div class="label">Correo electrónico</div><div class="value">asistente.gerencia@grupogajc.co</div></div>
+    <div class="cta-contact-item"><div class="label">Teléfono / WhatsApp</div><div class="value">311 242 0534 · 319 385 3045</div></div>
+    <div class="cta-contact-item"><div class="label">Dirección</div><div class="value">Cra. 4 #18-50 of. 1401, Bogotá</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <svg width="36" height="36" viewBox="0 0 42 42" fill="none">
+      <circle cx="21" cy="21" r="20" fill="#111" stroke="#E86200" stroke-width="1.5"/>
+      <path d="M10 21 Q14 15 21 14 Q28 15 32 21" stroke="#E86200" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M11 23 Q15 28 21 29 Q27 28 31 23" stroke="#F5C842" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <text x="21" y="22" text-anchor="middle" fill="#fff" font-size="5" font-weight="700" font-family="Arial" letter-spacing="0.5">GAJC</text>
+    </svg>
+    <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--naranja);letter-spacing:2px;">GRUPO GAJC</span>
+  </div>
+  <div class="footer-tagline">Acompañamiento financiero · Bogotá D.C. · Cobertura nacional</div>
+
+  <div class="footer-map">
+    <iframe src="https://www.google.com/maps?q=Cra+4+No.+18-50,+Bogot%C3%A1,+Colombia&output=embed" width="100%" height="150" style="border:0;display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Grupo GAJC"></iframe>
+  </div>
+
+  <div class="footer-legal">
+    <a href="politica-tratamiento-datos.html">Política de tratamiento de datos</a>
+    <a href="politica-privacidad.html">Política de privacidad</a>
+    <a href="terminos-condiciones.html">Términos y condiciones</a>
+  </div>
+
+  <div class="footer-copy">© <span id="year"></span> Grupo GAJC S.A.S. Todos los derechos reservados. Gestión conforme a la Ley 2300 de 2023 y normativa colombiana vigente.</div>
+</footer>
+
+<!-- WHATSAPP FLOATING -->
+<a href="https://wa.me/573112420534" class="fab-whatsapp" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.1-.2-.1-.4.1-.5.2-.2.4-.4.6-.6.2-.2.2-.4.1-.6-.1-.2-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.1.8 2.5.6 3-.2.4-.6.4-1.3.3-1.5-.1-.2-.3-.3-.5-.4z"/></svg>
+</a>
+
+<!-- CHATBOT -->
+<div class="chatbot-launcher" id="chatbot-launcher" role="button" tabindex="0" aria-expanded="false" aria-controls="chatbot-panel" aria-label="Abrir asistente virtual Sofía">
+  <span class="chatbot-avatar">S</span>
+  <span class="chatbot-launcher-text">Hable con Sofía</span>
+</div>
+<div class="chatbot-panel" id="chatbot-panel" aria-hidden="true">
+  <div class="chatbot-header">
+    <span class="chatbot-avatar">S</span>
+    <div><strong>Sofía</strong><small>Asistente virtual GAJC</small></div>
+    <button class="chatbot-close" id="chatbot-close" aria-label="Cerrar chat">×</button>
+  </div>
+  <div class="chatbot-body" id="chatbot-body"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* Year */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* Mobile nav */
+  const navToggle = document.getElementById('nav-toggle');
+  const navMobilePanel = document.getElementById('nav-mobile-panel');
+  if (navToggle && navMobilePanel) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobilePanel.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navMobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navMobilePanel.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
+  /* Fade-in on scroll */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* FAQ accordion */
+  document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const panel = trigger.nextElementSibling;
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.accordion-trigger').forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        t.nextElementSibling.style.maxHeight = null;
+      });
+      if (!isOpen) {
+        trigger.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* Contact form */
+  const form = document.getElementById('contact-form');
+  const feedback = document.getElementById('form-feedback');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      feedback.textContent = '';
+      feedback.className = 'form-feedback';
+      if (!form.checkValidity()) {
+        feedback.textContent = 'Por favor complete todos los campos obligatorios.';
+        feedback.classList.add('err');
+        form.reportValidity();
+        return;
+      }
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, { method: 'POST', body: formData });
+        if (response.ok) {
+          feedback.textContent = '¡Gracias! Hemos recibido su solicitud, un asesor se comunicará con usted muy pronto.';
+          feedback.classList.add('ok');
+          form.reset();
+        } else { throw new Error('respuesta no ok'); }
+      } catch (err) {
+        const nombre = encodeURIComponent(form.nombre.value);
+        const cedula = encodeURIComponent(form.cedula.value);
+        const celular = encodeURIComponent(form.celular.value);
+        const mensaje = encodeURIComponent(form.mensaje.value);
+        const texto = `Hola, soy ${nombre} (CC ${cedula}, cel ${celular}). ${mensaje}`;
+        feedback.innerHTML = 'No pudimos enviar el formulario automáticamente. <a href="https://wa.me/573112420534?text=' + texto + '" target="_blank" rel="noopener" style="color:var(--amarillo);">Haga clic aquí para enviarlo por WhatsApp</a>.';
+        feedback.classList.add('err');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Quiero recibir asesoría';
+      }
+    });
+  }
+
+  /* Chatbot Sofía */
+  const launcher = document.getElementById('chatbot-launcher');
+  const panel = document.getElementById('chatbot-panel');
+  const closeBtn = document.getElementById('chatbot-close');
+  const body = document.getElementById('chatbot-body');
+  const WHATSAPP_1 = 'https://wa.me/573112420534';
+  const WHATSAPP_2 = 'https://wa.me/573193853045';
+
+  function addBotMessage(text){ const d=document.createElement('div'); d.className='chat-msg bot'; d.textContent=text; body.appendChild(d); body.scrollTop=body.scrollHeight; }
+  function addUserMessage(text){ const d=document.createElement('div'); d.className='chat-msg user'; d.textContent=text; body.appendChild(d); body.scrollTop=body.scrollHeight; }
+  function clearOptions(){ const old=body.querySelector('.chat-options'); if(old) old.remove(); }
+  function showOptions(options){
+    clearOptions();
+    const wrap=document.createElement('div'); wrap.className='chat-options';
+    options.forEach(opt=>{
+      const btn=document.createElement('button'); btn.className='chat-option-btn'; btn.textContent=opt.label;
+      btn.addEventListener('click', ()=>{ addUserMessage(opt.label); clearOptions(); opt.action(); });
+      wrap.appendChild(btn);
+    });
+    body.appendChild(wrap); body.scrollTop=body.scrollHeight;
+  }
+  function showAdvisorLinks(){
+    clearOptions();
+    const wrap=document.createElement('div'); wrap.className='chat-options';
+    const a1=document.createElement('a'); a1.className='chat-link-btn'; a1.href=WHATSAPP_1; a1.target='_blank'; a1.rel='noopener'; a1.textContent='📲 WhatsApp 311 242 0534';
+    const a2=document.createElement('a'); a2.className='chat-link-btn'; a2.href=WHATSAPP_2; a2.target='_blank'; a2.rel='noopener'; a2.textContent='📲 WhatsApp 319 385 3045';
+    const back=document.createElement('button'); back.className='chat-option-btn'; back.textContent='← Volver al menú';
+    back.addEventListener('click', ()=>{ clearOptions(); showMainMenu(); });
+    wrap.appendChild(a1); wrap.appendChild(a2); wrap.appendChild(back);
+    body.appendChild(wrap); body.scrollTop=body.scrollHeight;
+  }
+  function showMainMenu(){
+    addBotMessage('¿En qué más puedo ayudarle?');
+    showOptions([
+      { label:'1️⃣ Consultar alternativas de pago', action:()=>{ addBotMessage('Contamos con distintas alternativas según su situación: acuerdos de pago en cuotas, descuentos por pronto pago en campañas vigentes y planes ajustados a su capacidad. Un asesor puede confirmarle cuál aplica a su caso.'); showAdvisorLinks(); } },
+      { label:'2️⃣ Conocer medios de pago', action:()=>{ addBotMessage('Puede pagar de forma segura a través de Reestructura S.A.S. o Crear País S.A.S. en la sección "Medios de pago" de esta página.'); showOptions([{label:'Ir a Medios de pago', action:()=>{document.getElementById('pagos').scrollIntoView({behavior:'smooth'}); closePanel();}},{label:'← Volver al menú', action:()=>{clearOptions(); showMainMenu();}}]); } },
+      { label:'3️⃣ Solicitar acuerdo de pago', action:()=>{ addBotMessage('Con gusto. Para construir una propuesta de acuerdo, un asesor necesita revisar su caso particular.'); showAdvisorLinks(); } },
+      { label:'4️⃣ Consultar información general', action:()=>{ addBotMessage('Grupo GAJC S.A.S. acompaña procesos de normalización de obligaciones financieras como aliado externo de distintas entidades acreedoras. Puede ver más en "Quiénes somos" y "Nuestros aliados".'); showOptions([{label:'Ir a Quiénes somos', action:()=>{document.getElementById('quienes-somos').scrollIntoView({behavior:'smooth'}); closePanel();}},{label:'← Volver al menú', action:()=>{clearOptions(); showMainMenu();}}]); } },
+      { label:'5️⃣ Hablar con un asesor', action:()=>{ addBotMessage('Claro, lo comunico directamente con un asesor humano por WhatsApp:'); showAdvisorLinks(); } },
+      { label:'6️⃣ Preguntas frecuentes', action:()=>{ addBotMessage('Puede ver todas las preguntas frecuentes en la sección correspondiente de esta página.'); showOptions([{label:'Ir a Preguntas frecuentes', action:()=>{document.getElementById('faq').scrollIntoView({behavior:'smooth'}); closePanel();}},{label:'← Volver al menú', action:()=>{clearOptions(); showMainMenu();}}]); } }
+    ]);
+  }
+  function openPanel(){
+    panel.classList.add('is-open'); panel.setAttribute('aria-hidden','false'); launcher.setAttribute('aria-expanded','true');
+    if (!body.dataset.started){ body.dataset.started='true'; addBotMessage('Hola 👋 Bienvenido a Grupo GAJC. Estoy aquí para ayudarle. Seleccione una opción.'); showMainMenu(); }
+  }
+  function closePanel(){ panel.classList.remove('is-open'); panel.setAttribute('aria-hidden','true'); launcher.setAttribute('aria-expanded','false'); }
+  if (launcher && panel && closeBtn) {
+    launcher.addEventListener('click', () => { panel.classList.contains('is-open') ? closePanel() : openPanel(); });
+    launcher.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); launcher.click(); } });
+    closeBtn.addEventListener('click', closePanel);
+  }
+});
+</script>
+</body>
+</html>
